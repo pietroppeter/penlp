@@ -9,13 +9,22 @@ mySlide(Hi):
   typewriter("Hi, I am Aristotle")
 
 mySlide(Plane):
-  nbText("""
-How did you feel the first time you took a plane?
-- Fear
-- Joy
-- Anger
-- none of the above
-""")
+  nbKaraxCode:
+    let question = "How did you feel the first time you took a plane?"
+    let options = ["Fear", "Joy", "Anger"]
+    var picked = ""
+    karaxHtml:
+      p:
+        text question
+      if picked.len == 0:
+        for option in options:
+          button:
+            text option
+            proc onClick() =
+              picked = option
+      else:
+        p:
+          text "You have picked " & picked
 
 when isMainModule:
   nbInit(theme=revealTheme)
