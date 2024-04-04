@@ -3,3 +3,4 @@
 - pick a better looking theme?
   - https://revealjs.com/themes/
   - why I am notv able to use Dracula? (local issue)
+- added typewriter (does not work with markdown)

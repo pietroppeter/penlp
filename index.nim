@@ -1,9 +1,27 @@
 import nimib, nimislides
 
-nbInit(theme=revealTheme)
-setSlidesTheme(Solarized)
+template mySlide(ident: untyped, body: untyped) =
+  template `slide ident` =
+    slide:
+      body
 
-slide:
-  nbText("Hi, I am *Aristotle*")
+mySlide(Hi):
+  typewriter("Hi, I am Aristotle")
 
-nbSave
+mySlide(Plane):
+  nbText("""
+How did you feel the first time you took a plane?
+- Fear
+- Joy
+- Anger
+- none of the above
+""")
+
+when isMainModule:
+  nbInit(theme=revealTheme)
+  setSlidesTheme(Solarized)
+
+  #slideHi
+  slidePlane
+
+  nbSave
