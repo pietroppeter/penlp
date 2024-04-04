@@ -5,4 +5,4 @@
   - why I am notv able to use Dracula? (local issue)
 - added typewriter (does not work with markdown) [x]
 - added minimal interactivity with nbKarax [x]
-
+- publish on Pages [x]
